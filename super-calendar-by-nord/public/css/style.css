@@ -1,0 +1,44 @@
+:root{
+  --scbn-theme: #66BB6A;
+  --scbn-bg: #ffffff;
+  --scbn-text: #1c1c1c;
+  --scbn-muted: #6b7280;
+  --scbn-border: #e5e7eb;
+}
+.scbn-container{ font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; color:var(--scbn-text); }
+.scbn-grid{ display:grid; grid-template-columns: 7fr 3fr; gap:16px; align-items:start; max-width:100%; }
+@media (max-width: 900px){ .scbn-grid{ grid-template-columns: 1fr; } }
+.scbn-left{ background:var(--scbn-bg); }
+.scbn-right{ background:var(--scbn-bg); }
+.scbn-monthbar{ display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.scbn-monthlabel{ font-weight:700; font-size:1.1rem; }
+.scbn-nav{ border:1px solid var(--scbn-border); background:#fff; padding:6px 10px; border-radius:10px; cursor:pointer; }
+.scbn-calgrid{ border:1px solid var(--scbn-border); border-radius:18px; overflow:hidden; }
+.scbn-row{ display:grid; grid-template-columns: repeat(7, 1fr); }
+.scbn-head .scbn-cell{ background:#f9fafb; font-weight:600; padding:10px; text-align:center; border-bottom:1px solid var(--scbn-border); }
+.scbn-day{ border-top:1px solid var(--scbn-border); }
+.scbn-cell{ min-height:52px; padding:6px; position:relative; }
+.scbn-datebtn{ width:100%; height:38px; border-radius:12px; border:1px solid transparent; background:transparent; cursor:pointer; font-weight:600; }
+.scbn-datebtn:hover{ background: #f2fff4; border-color: var(--scbn-theme); }
+.scbn-today{ box-shadow: inset 0 0 0 2px var(--scbn-theme); }
+.scbn-selected{ background: var(--scbn-theme); color:white; }
+.scbn-panel{ border:1px solid var(--scbn-border); border-radius:18px; padding:14px; box-shadow: 0 8px 16px rgba(0,0,0,.04); }
+#times{ display:flex; flex-direction:column; gap:8px; margin:8px 0 12px; max-height:420px; overflow:auto; padding-right:4px; }
+.scbn-slot{ border:1px solid var(--scbn-border); background:#fff; padding:10px; text-align:center; border-radius:12px; cursor:pointer; font-weight:600; }
+.scbn-slot:hover{ border-color: var(--scbn-theme); }
+.scbn-slot-selected{ background: var(--scbn-theme); color:white; border-color: var(--scbn-theme); }
+.scbn-slot-taken{ background:#f3f4f6; color:#9ca3af; border-color:#e5e7eb; cursor:not-allowed; }
+.scbn-form{ display:grid; gap:8px; }
+.scbn-form input{ width:100%; max-width:100%; box-sizing:border-box; }
+.scbn-book{ background: var(--scbn-theme); color:white; border:none; border-radius:14px; padding:12px; font-weight:700; cursor:pointer; margin-top:4px; }
+.scbn-book:hover{ filter: brightness(0.95); }
+.scbn-msg{ margin-top:8px; font-size:0.95rem; }
+
+/* Minimal specificity boost for highlights so Elementor can't override */
+.scbn-container .scbn-datebtn.scbn-selected{ background: var(--scbn-theme); color:white; border-color: var(--scbn-theme); }
+.scbn-container .scbn-slot.scbn-slot-selected{ background: var(--scbn-theme); color:white; border-color: var(--scbn-theme); }
+
+/* v1.0.3 — grey out past dates & ensure highlights are visible */
+.scbn-datebtn.scbn-disabled{ background:#f3f4f6; color:#9ca3af; cursor:not-allowed; border-color:#e5e7eb !important; }
+.scbn-container .scbn-datebtn.scbn-selected{ background: var(--scbn-theme) !important; color:#fff !important; border-color: var(--scbn-theme) !important; }
+.scbn-container .scbn-slot.scbn-slot-selected{ background: var(--scbn-theme) !important; color:#fff !important; border-color: var(--scbn-theme) !important; }
